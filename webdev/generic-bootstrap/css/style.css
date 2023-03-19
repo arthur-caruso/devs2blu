@@ -1,0 +1,26 @@
+.nav-link:hover, .nav-link.active {
+    color: black;
+    background-color: #F8D949;
+    transition:all 0.5s;
+}
+
+.configNavbar {
+    height: 100px;
+}
+
+li.nav-item a {
+    padding: 32px 8px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+@media screen and (max-width:990px) {
+    li.nav-item a {
+        padding: 16px 8px;
+    }
+}
+

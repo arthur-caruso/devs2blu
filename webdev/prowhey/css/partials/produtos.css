@@ -1,0 +1,77 @@
+/*feito por klaus*/
+
+/*Cabeçalho, imagem de background com o titulo Produtos*/
+header{
+    background-image: linear-gradient(rgba(17, 17, 17, 0.8), rgba(20, 20, 20, 1)), url(../../img/produtos/bannerProdutos.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+header h2{
+    font-size: 80px;
+    color: rgb(255, 255, 255);
+}
+
+/* Parte dos cards de produtos*/
+.card{
+    width: 22rem;
+    margin-bottom: 10px;
+    background-color: rgb(17, 26, 33);
+}
+
+.card-body{
+    color: rgb(255, 255, 255);
+}
+
+.card-title{
+    font-size: 26px;
+}
+
+.preco span, strong{
+    color: rgb(187, 24, 27);
+}
+
+.valor{
+    font-size: 30px;
+}
+
+.preco p{
+    font-size: 14px;
+}
+
+.botaoCompra{
+    width: 20rem;
+    background-color: rgb(187, 24, 27);
+    border: none;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    transition: 0.8s;
+}
+
+.botaoCompra:hover{
+    font-size: 18px;
+    background-color: rgba(187,24,27,0.9);
+}
+
+/*tratamento para outras resoluções de tela*/
+@media (max-width: 1190px){
+
+    .card{
+        width: 14rem;
+    }
+
+    .botaoCompra{
+        width: 12rem;
+    }
+
+}
+
+
+    
+   

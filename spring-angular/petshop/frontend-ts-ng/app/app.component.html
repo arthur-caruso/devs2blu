@@ -1,0 +1,214 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- NavBar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<a class="navbar-brand" style="color:white;">Pet Manager</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
+		aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarColor02">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item active">
+				<!-- Add Pet -->
+				<a (click)="onOpenModal(null, 'add')" class="btn btn-success"><i class="material-icons">&#xE147;</i>
+					<span>Add New
+						Pet</span></a>
+
+			</li>
+		</ul>
+		<!-- Pet Search -->
+		<form class="form-inline my-2 my-lg-0">
+			<input type="search" (ngModelChange)="searchPets(key.value)" #key="ngModel" ngModel name="key"
+				id="searchName" class="form-control mr-sm-2" placeholder="Search pets..." required>
+		</form>
+	</div>
+</nav>
+
+
+<!-- Pet Containers -->
+<div class="container" id="main-container">
+	<div class="row">
+		<div *ngFor="let pet of pets" class="col-md-6 col-xl-3">
+			<div class="card m-b-30">
+				<div class="card-body row">
+					<div class="col-6 card-title align-self-center mb-0">
+						<h5>{{pet.name}}</h5>
+						<p class="m-0">Treatment : {{pet.treatmentType}}</p>
+					</div>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">Species : {{pet.species}}</li>
+					<li class="list-group-item">Race : {{pet.race}}</li>
+					<li class="list-group-item">Height : {{pet.height}}</li>
+					<li class="list-group-item">Weight : {{pet.weight}}</li>
+					<li class="list-group-item">Fur Type : {{pet.furType}}</li>
+				</ul>
+
+				<div class="card-body">
+					<div class="float-right btn-group btn-group-sm">
+						<a (click)="onOpenModal(pet, 'update')" href="#" class="btn btn-primary tooltips"
+							data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i
+								class="fa fa-pencil"></i>
+						</a>
+						<a (click)="onOpenModal(pet, 'delete')" href="#" class="btn btn-secondary tooltips"
+							data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i
+								class="fa fa-times"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Add Modal -->
+<div class="modal fade" id="addPetModal" tabindex="-1" role="dialog" aria-labelledby="addPetModalLabel"
+	aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="addPetModalLabel">Add Pet</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form #addForm="ngForm" (ngSubmit)="onAddPet(addForm)">
+					<div class="form-group">
+						<label for="name">Name</label>
+						<input type="text" ngModel name="name" class="form-control" id="name" placeholder="Name"
+							required>
+					</div>
+					<div class="form-group">
+						<label for="species">Species</label>
+						<input type="text" ngModel name="species" class="form-control" id="species"
+							placeholder="Species" required>
+					</div>
+					<div class="form-group">
+						<label for="race">Race</label>
+						<input type="text" ngModel name="race" class="form-control" id="race" placeholder="Race"
+							required>
+					</div>
+					<div class="form-group">
+						<label for="height">Height</label>
+						<input type="text" ngModel name="height" class="form-control" id="height" placeholder="Height"
+							required>
+					</div>
+					<div class="form-group">
+						<label for="weight">Weight</label>
+						<input type="text" ngModel name="weight" class="form-control" id="weight" placeholder="Weight"
+							required>
+					</div>
+					<div class="form-group">
+						<label for="furType">Fur Type</label>
+						<input type="text" ngModel name="furType" class="form-control" id="furType"
+							placeholder="Fur Type" required>
+					</div>
+					<div class="form-group">
+						<label for="treatmentType">Treatment Type</label>
+						<input type="text" ngModel name="treatmentType" class="form-control" id="treatmentType"
+							placeholder="Treatment Type" required>
+					</div>
+					<div class="modal-footer">
+						<button type="button" id="add-pet-form" class="btn btn-secondary"
+							data-dismiss="modal">Close</button>
+						<button [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Save changes</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Edit Modal -->
+<div class="modal fade" id="updatePetModal" tabindex="-1" role="dialog" aria-labelledby="petEditModalLabel"
+	aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="updatePetModalLabel">Edit Pet {{editPet?.name}}</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form #editForm="ngForm">
+					<input type="hidden" ngModel="{{editPet?.id}}" name="id" class="form-control" id="id"
+						placeholder="">
+					<div class="form-group">
+						<label for="name">Name</label>
+						<input type="text" ngModel="{{editPet?.name}}" name="name" class="form-control" id="name"
+							aria-describedby="emailHelp" placeholder="Name">
+					</div>
+					<div class="form-group">
+						<label for="species">Species</label>
+						<input type="text" ngModel="{{editPet?.species}}" name="species" class="form-control"
+							id="species" placeholder="Species">
+					</div>
+					<div class="form-group">
+						<label for="race">Race</label>
+						<input type="text" ngModel="{{editPet?.race}}" name="race" class="form-control" id="race"
+							placeholder="Race">
+					</div>
+					<div class="form-group">
+						<label for="height">Height</label>
+						<input type="text" ngModel="{{editPet?.height}}" name="height" class="form-control" id="height"
+							placeholder="Height">
+					</div>
+					<div class="form-group">
+						<label for="weight">Weight</label>
+						<input type="text" ngModel="{{editPet?.weight}}" name="weight" class="form-control" id="weight"
+							placeholder="Weight">
+					</div>
+					<div class="form-group">
+						<label for="furType">Fur Type</label>
+						<input type="text" ngModel="{{editPet?.furType}}" name="furType" class="form-control"
+							id="furType" placeholder="Fur Type">
+					</div>
+					<div class="form-group">
+						<label for="treatmentType">Treatment Type</label>
+						<input type="text" ngModel="{{editPet?.treatmentType}}" name="treatmentType"
+							class="form-control" id="treatmentType" placeholder="Treatment Type">
+					</div>
+					<div class="modal-footer">
+						<button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Close</button>
+						<button (click)="onUpdatePet(editForm.value)" data-dismiss="modal" class="btn btn-primary">Save
+							changes</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Delete Modal-->
+<div class="modal fade" id="deletePetModal" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel"
+	aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="deleteModelLabel">Delete Pet</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<p>Are you sure you want to delete pet {{deletePet?.name}}?</p>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+					<button (click)="onDeletePet(deletePet?.id)" class="btn btn-danger"
+						data-dismiss="modal">Yes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Not Found Alert -->
+<div *ngIf="pets?.length == 0" class="col-lg-12 col-md-12 col-xl-12">
+	<div class="alert alert-info" role="alert">
+		<h4 class="alert-heading">NO PETS!</h4>
+		<p>No Pets were found.</p>
+	</div>
+</div>

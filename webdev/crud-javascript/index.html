@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	</link>
+	<link rel="stylesheet" href="icofont/icofont.min.css">
+	</link>
+	<link rel="stylesheet" href="css/style.css">
+	</link>
+	<title>Javascript demo</title>
+</head>
+
+<body>
+	<!-- 
+    <form action="">
+      <select name="" id="estados">
+        <option value="">Carregando...</option>
+      </select>
+      <select name="" id="cidades">
+        <option value="">Carregando...</option>
+      </select>
+    </form>
+    <script src="js/loadAPI.js"></script>
+    -->
+
+	<!--
+    <table id="table">
+      <thead>
+          <tr>
+              <th>product name</th>
+              <th>price</th>
+              <th>readjust</th>
+          </tr>
+      </thead>
+    </table>
+    <script src="js/loadPrices.js"></script>
+    -->
+	<!-- <script src="js/filterUsers.js"></script> -->
+	<!-- <script src="js/reduceGrades.js"></script> -->
+	<!-- <script src="js/concatArray.js"></script> -->
+	<!-- 
+    <form id="register" onsubmit="return false;">
+      <label for="anoFab">Ano de Fabricação</label>
+      <select class="anoFab">
+        <option value="2022">2022</option>
+        <option value="2021">2021</option>
+        <option value="2020">2020</option>
+        <option value="2019">2019</option>
+        <option value="2018">2018</option>
+        <option value="2017">2017</option>
+        <option value="2016">2016</option>
+        <option value="2015">2015</option>
+        <option value="2014">2014</option>
+        <option value="2013">2013</option>
+        <option value="2012">2012</option>
+        <option value="2011">2011</option>
+        <option value="2010">2010</option>
+      </select>
+      <br>
+
+      <label for="anoMod">Ano de Fabricação</label>
+      <select class="anoMod">
+        <option value="2022">2022</option>
+        <option value="2021">2021</option>
+        <option value="2020">2020</option>
+        <option value="2019">2019</option>
+        <option value="2018">2018</option>
+        <option value="2017">2017</option>
+        <option value="2016">2016</option>
+        <option value="2015">2015</option>
+        <option value="2014">2014</option>
+        <option value="2013">2013</option>
+        <option value="2012">2012</option>
+        <option value="2011">2011</option>
+        <option value="2010">2010</option>
+      </select>
+      <br>
+
+      <label for="marca">Marca</label>
+      <input type="text" class="marca">
+      <br>
+
+      <label for="cor">Cor</label>
+      <input type="text" class="cor">
+      <br>
+
+      <label for="placa">Placa</label>
+      <input type="text" class="placa">
+      <br>
+
+      <input type="submit" value="enviar" class="enviar">
+      <br>
+
+    </form>
+
+    <h3>Listagem de Veículos</h3>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Ano de Fabricação</th>
+          <th>Ano do Modelo</th>
+          <th>Marca</th>
+          <th>Cor</th>
+          <th>Placa</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody class="vehicles"></tbody>
+    </table>
+    <script src="js/storageCRUD.js"></script>
+    -->
+
+	<h1>Registro de Alunos</h1>
+	<form id="register" onsubmit="return false;">
+
+		<label for="nome">Nome</label>
+		<input type="text" class="nome" required>
+		<br>
+
+		<label for="notaUm">Primeira Nota</label>
+		<input type="number" class="notaUm" min="0" max="10" required>
+		<br>
+
+		<label for="notaDois">Segunda Nota</label>
+		<input type="number" class="notaDois" min="0" max="10" required>
+		<br>
+
+		<label for="notaTres">Terceira Nota</label>
+		<input type="number" class="notaTres" min="0" max="10" required>
+		<br>
+
+		<input type="submit" value="enviar" class="enviar">
+		<br>
+	</form>
+
+	<h2>Listagem de Alunos</h2>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Nome</th>
+				<th>N1</th>
+				<th>N2</th>
+				<th>N3</th>
+				<th>Média</th>
+				<th>Situação</th>
+				<th>Ações</th>
+			</tr>
+		</thead>
+		<tbody class="alunos"></tbody>
+	</table>
+	<script src="js/alunosCRUD.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

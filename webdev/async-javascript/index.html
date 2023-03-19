@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Async Programming Demo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+
+    <h2>Archived Website Search</h2>
+    <form id="searchForm" onsubmit="return false;">
+      <input type="text" id="searchPrompt" required>
+      <br>
+      <input type="submit" id="submitSearch">
+      <br>
+    </form>
+    
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Results</th>
+        </tr>
+      </thead>
+      <tbody id="resultTable"></tbody>
+    </table>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

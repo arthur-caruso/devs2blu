@@ -1,0 +1,14 @@
+<div class="card-character">
+	<div class="img-character">
+		<img src="{{character.image}}" alt="">
+	</div>
+	<div class="data-character">
+		<h1>{{character.name}}</h1>
+		<h2>{{character.class}}</h2>
+		<div *ngFor="let power of character.powers">
+			<p>{{power}}</p>
+		</div>
+		<p>{{character.description}}</p>
+	</div>
+	<button>select!</button>
+</div>

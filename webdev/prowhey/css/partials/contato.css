@@ -1,0 +1,89 @@
+#contact {
+    font-size: 64px;
+}
+
+.red-text {
+    color: #a4161a;
+
+}
+
+
+
+.form-contato,
+body {
+    background-color: #161a1d;
+}
+
+.contato-info {
+    font-size: large;
+    background-color: #fff;
+    padding: 2rem;
+    height: 32rem;
+    align-content: center;
+}
+
+form {
+    border: solid 1px #a4161a;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.separator-left,
+.separator-right {
+    padding: 1rem;
+}
+
+.separator-left {
+    border-left: solid 1px #a4161a;
+
+}
+
+.separator-right {
+    border-right: solid 1px #a4161a;
+
+}
+
+
+.form-contato {
+    margin: 12px;
+
+}
+
+.form-contato h2 {
+    color: #fff;
+
+}
+
+.form-contato label {
+    color: #fff;
+    height: 2.5rem;
+
+}
+
+.form-label {
+    margin-bottom: 0;
+}
+
+.full-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.form-contato button {
+    font-size: large;
+    background-color: #a4161a;
+    border-radius: 15px;
+    color: #fff;
+    padding: .5rem 4rem;
+    border: 0;
+}
+
+.form-contato button:hover,
+.form-contato button:active,
+.form-contato button:focus {
+    background-color: #a4161a;
+    padding: .5rem 4rem;
+    color: #fff;
+}
