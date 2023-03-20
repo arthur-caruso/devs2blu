@@ -13,7 +13,7 @@
   </p>
 </p>
 
-![License](https://img.shields.io/github/license/arthur-caruso/devs2blu)
+![Stargazers](https://img.shields.io/github/stars/arthur-caruso/devs2blu?style=social) ![License](https://img.shields.io/github/license/arthur-caruso/devs2blu)
 
 ## Table Of Contents
 * [About The Repository](#about-the-repository)
