@@ -1,3 +1,6 @@
+# prowhey
+Exercício em grupo +Devs2Blu Front-End
+
 //Escrito por Klaus
 
 Em primeiro momento decidimos o tema do site, uma loja de suplementos focado em whey protein. Nomeamos como "Pro Whey";
